@@ -1,0 +1,27 @@
+.country-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+    flex-direction: column;
+}
+
+.country-list select {
+    padding: 12px;
+    margin: 12px;
+}
+
+.country-timezone {
+    margin: 0 12px;
+    opacity: .5;
+    font-size: 10px;
+}
+
+.country-timezone-save {
+    margin: 12px;
+    font-size: 10px;
+}
+
+.country-timezone-save button {
+    padding: 12px;
+}

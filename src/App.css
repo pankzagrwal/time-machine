@@ -1,0 +1,52 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.clock-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.country-name {
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.country-flag {
+  height: 150px;
+  width: 150px;
+}
+
+.clock-time {
+  font-family: Neue Helvetica;
+  font-size: 30px;
+}
+
+.blink {
+  animation: blink 1s linear infinite;
+}
+
+.flag {
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
