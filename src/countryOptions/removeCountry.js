@@ -28,8 +28,8 @@ const RemoveCountry = ({
             const items = Object.keys(list)
             setList(items)
         });
-        chrome.storage.onChanged.addListener(function(changes, namespace) {
-            const list = changes.countryList.newValue;
+        chrome.storage.onChanged.addListener(function(changes) {
+            const list = changes?.countryList?.newValue ?? {};
             const items = Object.keys(list)
             setList(items)
         });

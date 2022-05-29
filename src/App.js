@@ -66,6 +66,13 @@ export default function App() {
           return <Clock timeZone={t} country={details.name} code={details.country_code.toLowerCase()}/>
         })
       }
+      <button className='update-countries'
+      onClick={() => {
+        chrome.tabs.create({ 'url': 'chrome://extensions/?options=' + chrome.runtime.id });
+      }}
+      >
+        Update countries.
+      </button>
     </div>
   );
 }

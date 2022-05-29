@@ -10,7 +10,8 @@
     "128": "logo192.png"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "tabs"
   ],
   "options_page": "popup.html",
   "chrome_url_overrides" : {

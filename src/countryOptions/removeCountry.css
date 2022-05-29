@@ -1,7 +1,7 @@
 .country-remove-card {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 30%;
     padding: 12px;
     border: 1px dotted;
     justify-content: center;

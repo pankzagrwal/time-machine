@@ -39,6 +39,17 @@
   display: block;
 }
 
+.update-countries {
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  border: 1px solid #CCC;
+  padding: 12px;
+  cursor: pointer;
+  opacity: .7;
+  border-radius: 12%;
+}
+
 @keyframes blink {
   0% {
     opacity: 0;
