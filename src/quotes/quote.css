@@ -1,0 +1,25 @@
+.quotes-container {
+  position: absolute;
+  top: 5%;
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quotes-container .quote {
+  font-weight: bold;
+  font-family: fantasy;
+  font-size: 2rem;
+}
+
+.quotes-container .author {
+  margin: 0 5px;
+  font-family: cursive;
+}
+
+.quotes-container .author-book a {
+  font-size: 12px;
+  color: black;
+}

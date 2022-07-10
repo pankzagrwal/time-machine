@@ -1,20 +1,17 @@
 {
   "manifest_version": 3,
-  "short_name": "time-machine",
-  "name": "Time Machine",
-  "version": "0.0.1",
-  "description": "Time Machine .",
+  "short_name": "Quote and World time on new tab",
+  "name": "Time Machine and Random Quote on new tab",
+  "version": "1.0.0",
+  "description": "Extension to have world time on tab change and a motivational quote with a nice background color",
   "icons": {
     "16": "logo192.png",
     "48": "logo192.png",
     "128": "logo192.png"
   },
-  "permissions": [
-    "storage",
-    "tabs"
-  ],
-  "options_page": "popup.html",
-  "chrome_url_overrides" : {
+  "permissions": ["storage", "tabs"],
+  "options_page": "options.html",
+  "chrome_url_overrides": {
     "newtab": "index.html"
   }
 }
