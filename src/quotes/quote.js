@@ -23,6 +23,16 @@ export default function Quote() {
             {data.book}
           </a>
         </span>
+        <a
+          className="btn"
+          target="_blank"
+          href={`https://twitter.com/intent/tweet?tweet-intents&url=${encodeURI(
+            "bit.ly/3odSS4B"
+          )}&text=${encodeURI(data.quote)} -${data.author}`}
+        >
+          <i></i>
+          <span className="label">Tweet</span>
+        </a>
       </div>
     </div>
   );

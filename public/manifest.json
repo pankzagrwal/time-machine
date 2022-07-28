@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "short_name": "Quote and World time on new tab",
-  "name": "Time Machine and Random Quote on new tab",
-  "version": "1.0.0",
+  "short_name": "Motivational Quote on new tab",
+  "name": "Random Motivational Quote on new tab",
+  "version": "1.0.1",
   "description": "Extension to have world time on tab change and a motivational quote with a nice background color",
   "icons": {
     "16": "logo192.png",
     "48": "logo192.png",
     "128": "logo192.png"
   },
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage"],
   "options_page": "options.html",
   "chrome_url_overrides": {
     "newtab": "index.html"

@@ -56,30 +56,21 @@ export default function App() {
         background: `linear-gradient(${direction}deg, rgba(${gradientColor1.r1},${gradientColor1.g1},${gradientColor1.b1},${gradientColor1.a1}), rgba(${gradientColor2.r2},${gradientColor2.g2},${gradientColor2.b2},${gradientColor2.a2}))`,
       }}
     >
-      {Object.keys(timeZones).map((tz, index) => {
-        const [, t] = tz.split("__");
-        const details = timeZones[tz];
-        return (
-          <Clock
-            timeZone={t}
-            country={details.name}
-            code={details.country_code.toLowerCase()}
-          />
-        );
-      })}
-      {Object.keys(timeZones).length === 0 && (
-        <Clock timeZone={""} country={"Add Country"} code={""} />
+      {Object.keys(timeZones).length > 0 && (
+        <div className="clock-container">
+          {Object.keys(timeZones).map((tz, index) => {
+            const [, t] = tz.split("__");
+            const details = timeZones[tz];
+            return (
+              <Clock
+                timeZone={t}
+                country={details.name}
+                code={details.country_code.toLowerCase()}
+              />
+            );
+          })}
+        </div>
       )}
-      <button
-        className="update-countries"
-        onClick={() => {
-          chrome.tabs.create({
-            url: "chrome://extensions/?options=" + chrome.runtime.id,
-          });
-        }}
-      >
-        Update countries.
-      </button>
 
       <Quote />
     </div>
