@@ -55,7 +55,7 @@ export default function App() {
   React.useEffect(() => {
     Particles.init({
       selector: ".background",
-      color: ["white", "white", "#Be255d", "#07468C", "#548C07"],
+      color: ["white", "white", "white", "#Be255d", "#07468C", "#548C07"],
       connectParticles: false,
       sizeVariations: 5,
     });
