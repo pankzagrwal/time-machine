@@ -1,4 +1,5 @@
 /*global chrome*/
+import Particles from "particlesjs";
 import "flag-icons";
 import "./App.css";
 import React from "react";
@@ -12,6 +13,8 @@ export default function App() {
   const [direction, setDirection] = React.useState();
 
   const [timeZones, setTimeZones] = React.useState([]);
+
+  const clientTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   React.useEffect(() => {
     const direction = Math.round(Math.random() * 360);
@@ -49,6 +52,14 @@ export default function App() {
       setTimeZones(list);
     });
   }, []);
+  React.useEffect(() => {
+    Particles.init({
+      selector: ".background",
+      color: ["white", "white", "#Be255d", "#07468C", "#548C07"],
+      connectParticles: false,
+      sizeVariations: 5,
+    });
+  }, []);
   return (
     <div
       className="App"
@@ -56,23 +67,26 @@ export default function App() {
         background: `linear-gradient(${direction}deg, rgba(${gradientColor1.r1},${gradientColor1.g1},${gradientColor1.b1},${gradientColor1.a1}), rgba(${gradientColor2.r2},${gradientColor2.g2},${gradientColor2.b2},${gradientColor2.a2}))`,
       }}
     >
-      {Object.keys(timeZones).length > 0 && (
-        <div className="clock-container">
-          {Object.keys(timeZones).map((tz, index) => {
-            const [, t] = tz.split("__");
-            const details = timeZones[tz];
-            return (
-              <Clock
-                timeZone={t}
-                country={details.name}
-                code={details.country_code.toLowerCase()}
-              />
-            );
-          })}
-        </div>
-      )}
+      {/* {Object.keys(timeZones).length > 0 && ( */}
+      <div className="clock-container">
+        <Clock timeZone={clientTZ} country={""} code={""} />
+        {Object.keys(timeZones).map((tz, index) => {
+          const [, t] = tz.split("__");
+          const details = timeZones[tz];
+          return (
+            <Clock
+              timeZone={t}
+              country={details.name}
+              code={details.country_code.toLowerCase()}
+            />
+          );
+        })}
+      </div>
+      {/* )} */}
 
       <Quote />
+
+      <canvas className="background"></canvas>
     </div>
   );
 }
@@ -114,11 +128,7 @@ const Clock = ({ timeZone, country, code }) => {
   return (
     <div className="clock-item">
       <div className="country-flag">
-        {code ? (
-          <span className={`fi fi-${code} flag`}></span>
-        ) : (
-          <img src="/logo192.png"></img>
-        )}
+        {code && <span className={`fi fi-${code} flag`}></span>}
       </div>
       <div className="country-name">{country}</div>
       <div className="clock-time">

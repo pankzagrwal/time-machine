@@ -6,12 +6,18 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 9999;
+  padding-right: 10%;
 }
 
 .quotes-container .quote {
   font-weight: bold;
   font-family: fantasy;
   font-size: 2rem;
+}
+
+.quotes-container .quote q {
+  text-shadow: 0 3px 0 rgb(255 255 255 / 40%);
 }
 
 .quotes-container .author {
@@ -22,6 +28,7 @@
 .quotes-container .author-book a {
   font-size: 12px;
   color: black;
+  margin-right: 5px;
 }
 
 .btn {

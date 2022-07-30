@@ -24,6 +24,7 @@ export default function Quote() {
           </a>
         </span>
         <a
+          rel="noreferrer"
           className="btn"
           target="_blank"
           href={`https://twitter.com/intent/tweet?tweet-intents&url=${encodeURI(
