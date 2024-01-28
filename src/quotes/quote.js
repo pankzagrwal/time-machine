@@ -1,4 +1,3 @@
-/*global chrome*/
 import "./quote.css";
 import React from "react";
 import quotes from "./data.json";
@@ -19,7 +18,7 @@ export default function Quote() {
       <div className="quote-meta">
         <span className="author">{`- ${data.author}`}</span>
         <span className="author-book">
-          <a href={data.bookLink} target="_blank">
+          <a href={data.bookLink} target="_blank" rel="noreferrer">
             {data.book}
           </a>
         </span>
@@ -28,7 +27,7 @@ export default function Quote() {
           className="btn"
           target="_blank"
           href={`https://twitter.com/intent/tweet?tweet-intents&url=${encodeURI(
-            "bit.ly/3odSS4B"
+            "bit.ly/3M5Gf71"
           )}&text=${encodeURI(data.quote)} -${data.author}`}
         >
           <i></i>

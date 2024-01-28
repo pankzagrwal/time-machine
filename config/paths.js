@@ -59,6 +59,7 @@ module.exports = {
   appHtml: resolveApp("public/index.html"),
   appIndexJs: resolveModule(resolveApp, "src/index"),
   appOptionsJs: resolveModule(resolveApp, "src/options"),
+  appBackgroundJs: resolveModule(resolveApp, "src/cse-injection"),
   appPackageJson: resolveApp("package.json"),
   appSrc: resolveApp("src"),
   appTsConfig: resolveApp("tsconfig.json"),

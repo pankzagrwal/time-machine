@@ -1,6 +1,4 @@
-/*global chrome*/
 import Particles from "particlesjs";
-import "flag-icons";
 import "./App.css";
 import React from "react";
 import Quote from "./quotes/quote";
@@ -11,8 +9,6 @@ export default function App() {
   const [gradientColor2, SetGradientColor2] = React.useState({});
 
   const [direction, setDirection] = React.useState();
-
-  const [timeZones, setTimeZones] = React.useState([]);
 
   const clientTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -47,12 +43,6 @@ export default function App() {
   }, []);
 
   React.useEffect(() => {
-    chrome.storage.sync.get(["countryList"], function (result) {
-      const list = result.countryList || {};
-      setTimeZones(list);
-    });
-  }, []);
-  React.useEffect(() => {
     Particles.init({
       selector: ".background",
       color: ["white", "white", "white", "#Be255d", "#07468C", "#548C07"],
@@ -67,24 +57,11 @@ export default function App() {
         background: `linear-gradient(${direction}deg, rgba(${gradientColor1.r1},${gradientColor1.g1},${gradientColor1.b1},${gradientColor1.a1}), rgba(${gradientColor2.r2},${gradientColor2.g2},${gradientColor2.b2},${gradientColor2.a2}))`,
       }}
     >
-      {/* {Object.keys(timeZones).length > 0 && ( */}
       <div className="clock-container">
         <Clock timeZone={clientTZ} country={""} code={""} />
-        {Object.keys(timeZones).map((tz, index) => {
-          const [, t] = tz.split("__");
-          const details = timeZones[tz];
-          return (
-            <Clock
-              timeZone={t}
-              country={details.name}
-              code={details.country_code.toLowerCase()}
-            />
-          );
-        })}
       </div>
-      {/* )} */}
-
       <Quote />
+      <div class="gcse-search"></div>
 
       <canvas className="background"></canvas>
     </div>
@@ -127,9 +104,6 @@ const Clock = ({ timeZone, country, code }) => {
 
   return (
     <div className="clock-item">
-      <div className="country-flag">
-        {code && <span className={`fi fi-${code} flag`}></span>}
-      </div>
       <div className="country-name">{country}</div>
       <div className="clock-time">
         <span className="hour"> {hour}</span>
@@ -139,3 +113,7 @@ const Clock = ({ timeZone, country, code }) => {
     </div>
   );
 };
+
+/*
+(Math.abs(d-t)/36e5)/(24*365)
+*/

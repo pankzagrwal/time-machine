@@ -2,12 +2,10 @@
   /* position: absolute; */
   /* top: 5%; */
   display: flex;
-  width: 90%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   z-index: 9999;
-  padding-right: 10%;
 }
 
 .quotes-container .quote {
